@@ -9,6 +9,11 @@ class Main {
     if (name.equals("default")) {
       name = "madlib.txt";
     }
+    else if (name.equals("defualt")) {
+      System.out.println("I always switch the u and the a on accident too!");
+      System.out.println("It's ok I know what you meant.");
+      name = "madlib.txt";
+    }
     return name;
   }
 
@@ -63,30 +68,17 @@ class Main {
   }
 
   public static void display(List<String> output) {
-    for(int i = 0; i < output.size(); i++) {
-      if (output.get(i).charAt(0) != ':') {
-        System.out.print(output.get(i) + " ");
+    System.out.print(output.get(0));
+    for(int i = 1; i < output.size(); i++) {
+      if (output.get(i).charAt(0) == '.') {
+        System.out.print(output.get(i));
+      }
+      else if (output.get(i).charAt(0) != ':') {
+        System.out.print(" " + output.get(i));
       }
       else {
         System.out.println();
       }
-      // switch(output.get(i).charAt(1)) {
-      //     case '.':
-      //       System.out.print(".");
-      //       break;
-      //     case '!':
-      //       System.out.println();
-      //       break;
-      //     case '<':
-      //       System.out.print("\"");
-      //       break;
-      //     case '>':
-      //       System.out.print("\"");
-      //       break;
-      //     default:
-      //       System.out.print(output.get(i));
-      // } // end of switch
-
     } // end of for
     return;
   }
